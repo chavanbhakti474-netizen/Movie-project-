@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <div class="logo">🎬 <span>Movie Finder</span></div>
+    <nav class="nav-links">
+      <a href="#home">Home</a><a href="#movies">Movies</a><a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="small-title">WELCOME TO</p>
+    <h1>Movie <span>Finder</span></h1>
+    <p class="hero-text">Discover your next favorite movie with our simple and powerful movie search website.</p>
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search movie by title..." aria-label="Search movies">
+      <button id="searchBtn">🔍 Search</button>
+    </div>
+  </div>
+</section>
+
+<main class="container" id="movies">
+  <div class="section-heading">
+    <div><p class="section-label">EXPLORE</p><h2>Find Your Movie</h2></div>
+    <div class="filters">
+      <select id="genreFilter" aria-label="Filter by genre">
+        <option value="All">All Genres</option>
+        <option>Action</option><option>Comedy</option><option>Drama</option>
+        <option>Horror</option><option>Romance</option><option>Thriller</option>
+        <option>Sci-Fi</option><option>Animation</option>
+      </select>
+      <button id="resetBtn" class="reset-btn">↻ Reset</button>
+    </div>
+  </div>
+  <div class="result-info"><p id="resultText">Showing all movies</p></div>
+  <div class="movie-grid" id="movieGrid"></div>
+  <div id="noResults" class="no-results">
+    <div class="no-results-icon">🎬</div>
+    <h3>No movies found</h3>
+    <p>Try searching with another movie title or genre.</p>
+  </div>
+</main>
+
+<section class="about" id="about">
+  <div class="container">
+    <p class="section-label">ABOUT PROJECT</p>
+    <h2>Movie Finder</h2>
+    <p>Movie Finder is a simple movie search website created using HTML, CSS and JavaScript. Users can search movies, filter movies by genre and view detailed movie information.</p>
+    <div class="tech-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span></div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="movieModal" role="dialog" aria-modal="true" aria-label="Movie details">
+  <div class="modal">
+    <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+    <div class="modal-content">
+      <img id="modalPoster" src="" alt="Movie poster">
+      <div class="modal-info">
+        <p class="modal-label">MOVIE DETAILS</p>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-meta">
+          <span id="modalRating"></span><span id="modalGenre"></span><span id="modalYear"></span>
+        </div>
+        <h3>Overview</h3>
+        <p id="modalOverview"></p>
+        <button class="watch-btn" type="button">▶ Watch Trailer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2026 Movie Finder | BCA College Project</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
